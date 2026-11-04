@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Mục lục — The Chronicler</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2b2018;text-decoration:none}a:hover{color:#8e2b1f}
+.cz{font-family:'Cinzel',serif}
+.run{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.28em;color:#6b5540}
+.rub{color:#8e2b1f}
+.page{padding:56px 60px 44px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px}
+.liber{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.3em;color:#8e2b1f;margin-top:12px;display:flex;align-items:center;gap:12px}
+.liber::after{content:"";flex:1;height:1px;background:#c4ab80}
+.row{display:flex;align-items:baseline;gap:10px;font-size:17px;padding:5px 0;min-height:32px}
+.dots{flex:1;border-bottom:1.5px dotted #a88d66;transform:translateY(-4px);min-width:20px}
+.tb{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;padding:12px 18px;min-height:44px;border:1px solid #c9a14a;background:transparent;color:#e7d3a3;cursor:pointer}
+.tb-g{background:#c9a14a;color:#2a120e}
+.btn-r{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;padding:14px 22px;min-height:48px;border:none;background:#8e2b1f;color:#f6e6d6;cursor:pointer}
+.btn-r:hover{background:#a3362a}
+.inp{border:none;border-bottom:1px solid #a88d66;background:transparent;font-family:'EB Garamond',serif;font-size:18px;color:#2b2018;padding:8px 2px;width:100%;box-sizing:border-box;min-height:44px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1040px; box-sizing: border-box; background: radial-gradient(ellipse at 50% 45%, #3a2618 0%, #1a110b 75%); font-family: 'EB Garamond', Georgia, serif; display: flex; flex-direction: column; align-items: center; padding: 24px 0 0; gap: 26px">
+  <header style="width: 1240px; display: flex; justify-content: space-between; align-items: center">
+    <a href="W1-Bia-sach.dc.html" class="cz" style="font-size: 18px; font-weight: 700; letter-spacing: .14em; color: #d4ad5a">THE CHRONICLER</a>
+    <div style="display: flex; gap: 10px">
+      <a href="W2-Trang-doc.dc.html" class="tb" style="display: flex; align-items: center; color: #e7d3a3">ĐỌC TIẾP</a>
+      <button class="tb tb-g">+ CHƯƠNG MỚI</button>
+    </div>
+  </header>
+
+  <div style="display: flex; box-shadow: 0 30px 60px rgba(0,0,0,.55); border: 10px solid #4a1813; border-radius: 6px; background: #4a1813">
+    <section aria-label="Mục lục" class="page" style="width: 610px; height: 880px; background: linear-gradient(90deg, #efe2c5 0%, #f2e7cd 80%, #e2d0aa 100%)">
+      <span class="run" style="text-align: center">TOMUS I</span>
+      <div style="text-align: center; display: flex; flex-direction: column; gap: 4px; margin: 6px 0 4px">
+        <h1 class="cz" style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: .12em; color: #2b2018">INDEX CAPITULORUM</h1>
+        <span style="font-style: italic; font-size: 17px; color: #5c4a3a">Mục lục các chương theo niên đại</span>
+      </div>
+      <sc-for list="{{libers}}" as="lb" hint-placeholder-count="4">
+        <div style="display: flex; flex-direction: column">
+          <div class="liber">{{lb.name}}</div>
+          <sc-for list="{{lb.rows}}" as="r" hint-placeholder-count="2">
+            <a href="W2-Trang-doc.dc.html" class="row">
+              <span class="cz" style="width: 96px; flex: none; font-size: 13px; letter-spacing: .08em; color: #8e2b1f">{{r.roman}}</span>
+              <span style="color: #2b2018">{{r.title}}</span>
+              <span class="dots"></span>
+              <span style="font-weight: 600; white-space: nowrap; color: #2b2018">{{r.price}}</span>
+            </a>
+          </sc-for>
+        </div>
+      </sc-for>
+      <div style="flex: 1"></div>
+      <span class="run" style="text-align: center">fol. i</span>
+    </section>
+
+    <div style="width: 2px; background: linear-gradient(180deg, #b49a72, #8a7050)"></div>
+
+    <section aria-label="Colophon và bảng vàng" class="page" style="width: 610px; height: 880px; background: linear-gradient(90deg, #e2d0aa 0%, #f2e7cd 20%, #f0e4c8 100%)">
+      <span class="run" style="text-align: center">COLOPHON</span>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #b08a3e; border-bottom: 1px solid #b08a3e; padding: 18px 0; margin-top: 8px; text-align: center">
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 36px; font-weight: 600; color: #2b2018">8</span><span style="font-style: italic; color: #5c4a3a">chương</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px; border-left: 1px solid #c4ab80; border-right: 1px solid #c4ab80"><span style="font-size: 36px; font-weight: 600; color: #8e2b1f">2.150.000 ₫</span><span style="font-style: italic; color: #5c4a3a">quỹ bảo chứng</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 36px; font-weight: 600; color: #2b2018">18</span><span style="font-style: italic; color: #5c4a3a">lần viết đè</span></div>
+      </div>
+      <h2 class="cz" style="margin: 14px 0 0; font-size: 15px; letter-spacing: .3em; color: #8e2b1f; font-weight: 600">BẢNG VÀNG SỬ QUAN</h2>
+      <sc-for list="{{leaders}}" as="l" hint-placeholder-count="3">
+        <div class="row" style="font-size: 18px">
+          <span class="cz" style="width: 32px; flex: none; color: #8e2b1f">{{l.rank}}</span>
+          <span style="font-style: italic; color: #2b2018">{{l.name}}</span>
+          <span class="dots"></span>
+          <span style="color: #5c4a3a; white-space: nowrap">{{l.year}} · <span style="font-weight: 600; color: #2b2018">{{l.price}}</span></span>
+        </div>
+      </sc-for>
+      <div style="margin-top: 22px; border: 1px solid #b08a3e; padding: 26px; display: flex; flex-direction: column; gap: 14px; background: rgba(255,250,236,.45)">
+        <h2 class="cz" style="margin: 0; font-size: 15px; letter-spacing: .3em; color: #2b2018; font-weight: 600">KHỞI THẢO CHƯƠNG MỚI</h2>
+        <p style="margin: 0; font-size: 17px; color: #5c4a3a; line-height: 1.5">Chọn một năm còn trống trong biên niên và trở thành người chấp bút đầu tiên của nó.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px">
+          <label style="display: flex; flex-direction: column"><span style="font-style: italic; color: #5c4a3a; font-size: 15px">Năm</span><input class="inp" placeholder="2099"></label>
+          <label style="display: flex; flex-direction: column"><span style="font-style: italic; color: #5c4a3a; font-size: 15px">Bảo chứng khởi điểm (₫)</span><input class="inp" placeholder="50.000"></label>
+        </div>
+        <button class="btn-r" style="align-self: flex-start">MỞ CHƯƠNG MỚI</button>
+      </div>
+      <div style="flex: 1"></div>
+      <span class="run" style="text-align: center">fol. ii</span>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      libers: [
+        { name: 'LIBER I · KỶ KHỞI NGUYÊN', rows: [
+          { roman: 'MMXXVI', title: 'Trí tuệ nhân tạo biết ăn bún đậu mắm tôm', price: '120.000 ₫' },
+          { roman: 'MMXXVIII', title: 'Tàu đệm từ xuyên đáy sông Hồng', price: '200.000 ₫' },
+          { roman: 'MMXXXI', title: 'Bách Khoa chuyển cơ sở lên Sao Hỏa', price: '350.000 ₫' }
+        ]},
+        { name: 'LIBER II · VIỄN CHINH CÔNG NGHỆ', rows: [
+          { roman: 'MMXLII', title: 'Quạt nan tre chạy phản vật chất', price: '180.000 ₫' },
+          { roman: 'MMLV', title: 'Vô địch Cúp bóng đá Dải Ngân Hà', price: '420.000 ₫' }
+        ]},
+        { name: 'LIBER III · THUỘC ĐỊA KHÔNG GIAN', rows: [
+          { roman: 'MMLXXVII', title: 'Bánh mì thành tiền tệ chung thiên hà', price: '300.000 ₫' },
+          { roman: 'MMCXII', title: 'Cổng thời không ở Hồ Gươm', price: '500.000 ₫' }
+        ]},
+        { name: 'LIBER IV · HẬU NHÂN LOẠI', rows: [
+          { roman: 'MMCCL', title: 'Đại Sử Ký Hư Cấu thành môn thi vũ trụ', price: '80.000 ₫' }
+        ]}
+      ],
+      leaders: [
+        { rank: 'I', name: 'Đại Sứ Lịch Sử Hà Nội', year: '2112', price: '500.000 ₫' },
+        { rank: 'II', name: 'Bình Luận Viên Liên Sao', year: '2055', price: '420.000 ₫' },
+        { rank: 'III', name: 'Sử Gia K65 Vũ Trụ', year: '2031', price: '350.000 ₫' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
