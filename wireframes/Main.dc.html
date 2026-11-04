@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>A · Tạp chí chuyên luận</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.field{border:none;border-bottom:1.5px dotted #777;padding:10px 0;font-size:14px;background:transparent;width:100%;font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1500px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 20px 64px; border-bottom: 1px solid #ccc; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; justify-content: space-between" class="lbl"><span>ISSN · Viện lịch sử hư cấu</span><span>[số chuyên luận] · [tổng quỹ] · [số lần lật đổ]</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div style="font-size: 44px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+        <div style="font-size: 15px; color: #555">Đại Việt Hư Cấu Toàn Thư — tagline</div>
+      </div>
+      <div style="display: flex; gap: 10px"><button class="btn">In A4</button><button class="btn btn-p">+ Khởi thảo năm mới</button></div>
+    </div>
+  </header>
+  <nav aria-label="Niên biểu" style="padding: 16px 64px; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 12px">
+    <button class="btn" aria-label="Năm trước">‹</button>
+    <div style="flex: 1; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px">
+      <div class="ph" style="height: 44px; background: #222; color: #fff; border-style: solid">2026</div>
+      <div class="ph" style="height: 44px">2028</div><div class="ph" style="height: 44px">2031</div><div class="ph" style="height: 44px">2042</div>
+      <div class="ph" style="height: 44px">2055</div><div class="ph" style="height: 44px">2077</div><div class="ph" style="height: 44px">2112</div><div class="ph" style="height: 44px">2250</div>
+    </div>
+    <button class="btn" aria-label="Năm sau">›</button>
+  </nav>
+  <main style="flex: 1; padding: 40px 64px; display: grid; grid-template-columns: 7fr 4fr; gap: 48px">
+    <article style="display: flex; flex-direction: column; gap: 18px">
+      <div class="lbl">Liber I · Kỷ Khởi Nguyên · Văn hóa</div>
+      <div style="font-size: 72px; font-weight: 800; line-height: 1">MMXXVI</div>
+      <div style="font-size: 32px; font-weight: 700; line-height: 1.2">Tiêu đề chuyên luận của năm</div>
+      <div style="font-size: 16px; color: #555">Phụ đề một dòng</div>
+      <div class="ph" style="height: 320px">Tranh khắc gỗ minh họa</div>
+      <div class="lbl">Chú thích tranh</div>
+      <div style="display: flex; gap: 16px">
+        <div class="ph" style="width: 72px; height: 72px; font-size: 28px">D</div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 10px"><div class="bar"></div><div class="bar"></div><div class="bar" style="width: 80%"></div></div>
+      </div>
+      <div class="bar"></div><div class="bar"></div><div class="bar" style="width: 60%"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ccc; padding-top: 14px">
+        <span class="lbl">Sử quan: [tên] · Bảo chứng: [giá]</span>
+        <div class="ph" style="width: 64px; height: 64px; border-radius: 50%">Triện</div>
+      </div>
+    </article>
+    <aside style="display: flex; flex-direction: column; gap: 20px; border-left: 1px solid #ccc; padding-left: 32px">
+      <div class="lbl">Salon lật đổ chính biên</div>
+      <div style="font-size: 22px; font-weight: 700">Viết lại năm này</div>
+      <div style="font-size: 14px; color: #555">Giá tối thiểu: [giá hiện tại + bước]</div>
+      <label class="lbl" for="a1">Bút danh</label><input id="a1" class="field" placeholder="……………">
+      <label class="lbl" for="a2">Mức bảo chứng (₫)</label><input id="a2" class="field" placeholder="……………">
+      <label class="lbl" for="a3">Tiêu đề mới</label><input id="a3" class="field" placeholder="……………">
+      <label class="lbl" for="a4">Nội dung</label><textarea id="a4" class="field" style="height: 80px"></textarea>
+      <div class="ph" style="height: 180px">Mã VietQR theo số tiền</div>
+      <button class="btn btn-p">Đóng dấu &amp; thay chính biên</button>
+      <div class="lbl" style="margin-top: 12px">Dã sử bị bác bỏ</div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div class="ph" style="height: 52px; justify-content: flex-start; padding: 0 12px">[giá] · [tác giả] · tiêu đề cũ</div>
+        <div class="ph" style="height: 52px; justify-content: flex-start; padding: 0 12px">[giá] · [tác giả] · tiêu đề cũ</div>
+      </div>
+    </aside>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

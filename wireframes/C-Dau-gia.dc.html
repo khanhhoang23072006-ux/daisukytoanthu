@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>C · Sàn đấu giá trang sử</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.lot{border:1.5px solid #222;display:flex;flex-direction:column;box-sizing:border-box}
+.lot-b{padding:16px;display:flex;flex-direction:column;gap:8px}
+.price{font-size:22px;font-weight:800}
+.row{display:flex;justify-content:space-between;align-items:center}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1500px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 64px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center">
+    <div style="font-size: 26px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <div style="display: flex; gap: 28px" class="lbl"><span>[tổng quỹ]</span><span>[số lần lật đổ]</span><span>[số năm]</span></div>
+    <button class="btn btn-p">+ Mở phiên năm mới</button>
+  </header>
+  <section style="padding: 32px 64px; display: grid; grid-template-columns: 3fr 2fr; gap: 32px; border-bottom: 1px solid #ccc">
+    <div class="ph" style="height: 300px">Trang sử đắt nhất — tranh lớn</div>
+    <div style="display: flex; flex-direction: column; gap: 14px; justify-content: center">
+      <div class="lbl">Phiên nóng nhất tuần</div>
+      <div style="font-size: 56px; font-weight: 800; line-height: 1">2077</div>
+      <div style="font-size: 24px; font-weight: 700">Tiêu đề trang sử hiện tại</div>
+      <div class="row" style="border: 1.5px solid #222; padding: 14px"><div><div class="lbl">Giá hiện tại</div><div class="price">[giá]</div></div><div><div class="lbl">Lần lật</div><div class="price">[n]</div></div><div><div class="lbl">Giữ bởi</div><div class="price">[tên]</div></div></div>
+      <button class="btn btn-p">Trả giá cao hơn để viết lại</button>
+    </div>
+  </section>
+  <div style="flex: 1; padding: 28px 64px; display: grid; grid-template-columns: 3fr 1fr; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <div class="row">
+        <div style="display: flex; gap: 8px"><button class="btn btn-p">Tất cả</button><button class="btn">Liber I</button><button class="btn">Liber II</button><button class="btn">Liber III</button></div>
+        <label class="lbl" style="display: flex; gap: 8px; align-items: center">Sắp xếp <select class="btn"><option>Giá cao nhất</option><option>Năm</option><option>Mới lật</option></select></label>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+        <div class="lot"><div class="ph" style="height: 120px; border-width: 0 0 1px 0">tranh</div><div class="lot-b"><div class="row"><span style="font-weight: 800; font-size: 20px">2026</span><span class="lbl">Lật 1×</span></div><div class="bar"></div><div class="row"><span class="price">[giá]</span><button class="btn">Viết lại</button></div></div></div>
+        <div class="lot"><div class="ph" style="height: 120px; border-width: 0 0 1px 0">tranh</div><div class="lot-b"><div class="row"><span style="font-weight: 800; font-size: 20px">2028</span><span class="lbl">Lật 2×</span></div><div class="bar"></div><div class="row"><span class="price">[giá]</span><button class="btn">Viết lại</button></div></div></div>
+        <div class="lot"><div class="ph" style="height: 120px; border-width: 0 0 1px 0">tranh</div><div class="lot-b"><div class="row"><span style="font-weight: 800; font-size: 20px">2031</span><span class="lbl">Lật 0×</span></div><div class="bar"></div><div class="row"><span class="price">[giá]</span><button class="btn">Viết lại</button></div></div></div>
+        <div class="lot"><div class="ph" style="height: 120px; border-width: 0 0 1px 0">tranh</div><div class="lot-b"><div class="row"><span style="font-weight: 800; font-size: 20px">2042</span><span class="lbl">Lật 3×</span></div><div class="bar"></div><div class="row"><span class="price">[giá]</span><button class="btn">Viết lại</button></div></div></div>
+        <div class="lot"><div class="ph" style="height: 120px; border-width: 0 0 1px 0">tranh</div><div class="lot-b"><div class="row"><span style="font-weight: 800; font-size: 20px">2055</span><span class="lbl">Lật 1×</span></div><div class="bar"></div><div class="row"><span class="price">[giá]</span><button class="btn">Viết lại</button></div></div></div>
+        <div class="lot" style="border-style: dashed"><div class="lot-b" style="flex: 1; align-items: center; justify-content: center; text-align: center"><div style="font-size: 32px">+</div><div style="font-weight: 700">Năm còn trống</div><div class="lbl">Giá khởi điểm [giá]</div></div></div>
+      </div>
+    </div>
+    <aside style="display: flex; flex-direction: column; gap: 14px">
+      <div class="lbl">Bảng vàng sử quan</div>
+      <div class="row" style="border-bottom: 1px solid #ccc; padding: 10px 0"><span>1. [tên]</span><span style="font-weight: 700">[tổng]</span></div>
+      <div class="row" style="border-bottom: 1px solid #ccc; padding: 10px 0"><span>2. [tên]</span><span style="font-weight: 700">[tổng]</span></div>
+      <div class="row" style="border-bottom: 1px solid #ccc; padding: 10px 0"><span>3. [tên]</span><span style="font-weight: 700">[tổng]</span></div>
+      <div class="lbl" style="margin-top: 20px">Vừa bị lật đổ</div>
+      <div class="ph" style="height: 64px; justify-content: flex-start; padding: 0 12px">[năm] · [người mới] thay [người cũ]</div>
+      <div class="ph" style="height: 64px; justify-content: flex-start; padding: 0 12px">[năm] · [người mới] thay [người cũ]</div>
+      <div class="ph" style="height: 64px; justify-content: flex-start; padding: 0 12px">[năm] · [người mới] thay [người cũ]</div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

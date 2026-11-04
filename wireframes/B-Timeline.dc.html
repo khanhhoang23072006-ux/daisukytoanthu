@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>B · Trục thời gian dọc</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.card{border:1.5px solid #222;background:#fff;padding:20px;display:flex;flex-direction:column;gap:10px;box-sizing:border-box}
+.dot{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid #222;box-sizing:border-box}
+.yr{font-size:28px;font-weight:800}
+.field{border:none;border-bottom:1.5px dotted #777;padding:10px 0;font-size:14px;background:transparent;width:100%;font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1500px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 64px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; align-items: center">
+    <div style="font-size: 26px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <nav aria-label="Kỷ nguyên" style="display: flex; gap: 8px">
+      <button class="btn btn-p">Tất cả</button><button class="btn">Liber I</button><button class="btn">Liber II</button><button class="btn">Liber III</button><button class="btn">Liber IV</button>
+    </nav>
+    <button class="btn btn-p">+ Năm mới</button>
+  </header>
+  <section style="padding: 40px 64px 24px; display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+    <div class="lbl">Biên niên sử cạnh tranh</div>
+    <div style="font-size: 40px; font-weight: 800">Cuộn xuống để đi qua các thế kỷ</div>
+    <div style="font-size: 15px; color: #555">Bấm một năm để mở bảng lật đổ ở bên phải</div>
+  </section>
+  <div style="flex: 1; display: flex; gap: 0; padding: 0 0 0 64px; min-height: 0">
+    <div style="flex: 1; position: relative; display: flex; flex-direction: column; gap: 28px; padding: 16px 40px 0 0">
+      <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #222"></div>
+      <div style="display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center">
+        <div class="card"><div class="lbl">Liber I · [giá]</div><div class="yr">2026</div><div style="font-weight: 700">Tiêu đề sự kiện</div><div class="bar"></div><div class="bar" style="width: 70%"></div></div>
+        <div style="display: flex; justify-content: center"><div class="dot"></div></div><div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center">
+        <div></div><div style="display: flex; justify-content: center"><div class="dot" style="background: #222"></div></div>
+        <div class="card" style="border-width: 3px"><div class="lbl">Đang chọn · [giá]</div><div class="yr">2028</div><div style="font-weight: 700">Tiêu đề sự kiện</div><div class="ph" style="height: 120px">Tranh minh họa</div><div class="bar"></div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center">
+        <div class="card"><div class="lbl">Liber I · [giá]</div><div class="yr">2031</div><div style="font-weight: 700">Tiêu đề sự kiện</div><div class="bar"></div></div>
+        <div style="display: flex; justify-content: center"><div class="dot"></div></div><div></div>
+      </div>
+      <div style="display: flex; justify-content: center"><div class="lbl" style="background: #fff; padding: 6px 12px; border: 1px solid #222; position: relative">Liber II · Kỷ Viễn Chinh</div></div>
+      <div style="display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center">
+        <div></div><div style="display: flex; justify-content: center"><div class="dot"></div></div>
+        <div class="card"><div class="lbl">Liber II · [giá]</div><div class="yr">2042</div><div style="font-weight: 700">Tiêu đề sự kiện</div><div class="bar"></div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 40px 1fr; align-items: center">
+        <div class="card"><div class="lbl">Liber II · [giá]</div><div class="yr">2055</div><div style="font-weight: 700">Tiêu đề sự kiện</div><div class="bar"></div></div>
+        <div style="display: flex; justify-content: center"><div class="dot"></div></div><div></div>
+      </div>
+    </div>
+    <aside style="width: 400px; border-left: 1.5px solid #222; background: #f5f5f5; padding: 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; justify-content: space-between; align-items: center"><div class="lbl">Ngăn kéo · năm 2028</div><button class="btn" aria-label="Đóng">×</button></div>
+      <div style="font-size: 22px; font-weight: 700">Toàn văn chuyên luận</div>
+      <div class="bar"></div><div class="bar"></div><div class="bar" style="width: 75%"></div>
+      <div style="border-top: 1px solid #bbb; margin: 8px 0"></div>
+      <div style="font-size: 18px; font-weight: 700">Lật đổ năm này</div>
+      <label class="lbl" for="b1">Bút danh</label><input id="b1" class="field">
+      <label class="lbl" for="b2">Mức bảo chứng (≥ [giá])</label><input id="b2" class="field">
+      <label class="lbl" for="b3">Tiêu đề mới</label><input id="b3" class="field">
+      <div class="ph" style="height: 160px">VietQR</div>
+      <button class="btn btn-p">Đóng dấu &amp; thay thế</button>
+      <div class="lbl">Lịch sử lật đổ (2)</div>
+      <div class="ph" style="height: 44px">bản cũ 1</div><div class="ph" style="height: 44px">bản cũ 2</div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
