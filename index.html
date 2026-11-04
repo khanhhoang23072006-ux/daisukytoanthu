@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Chronicler - Đại Việt Hư Cấu Toàn Thư (Tạp Chí Sử Thi Nghệ Thuật)</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet (Fine-Art Editorial) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen text-[#1a1816] selection:bg-[#9b2226] selection:text-white relative">
+
+  <!-- ========================================================
+       1. TỔNG ĐẦU BÁO & TIÊU ĐỀ TẠP CHÍ (EDITORIAL MASTHEAD)
+       ======================================================== -->
+  <header class="editorial-masthead border-b border-[#e6dcce] pt-3 pb-6 px-4">
+    <div class="max-w-6xl mx-auto">
+      
+      <!-- Dòng Siêu Thông Tin Chuẩn Báo Chí Mỹ Thuật -->
+      <div class="flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.18em] text-[#6b625b] border-b border-[#e6dcce]/80 pb-2 mb-4 font-cinzel">
+        <div class="flex items-center gap-4">
+          <span>ISSN 2026-8888</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="hidden sm:inline">VIỆN LỊCH SỬ HƯ CẤU QUỐC TẾ</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span id="stat-masthead-events" class="font-bold text-[#1a1816]">8 Chuyên Luận</span>
+          <span>•</span>
+          <span id="stat-masthead-bounty" class="font-bold text-[#b08432]">2.150.000 ₫</span>
+          <span class="hidden md:inline">•</span>
+          <span id="stat-masthead-overwrites" class="hidden md:inline font-bold text-[#9b2226]">18 Lần Lật Đổ</span>
+        </div>
+      </div>
+
+      <!-- Đại Tự Masthead Tiêu Đề Chính -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 py-2">
+        <div class="text-center md:text-left">
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#b08432] block mb-1 font-cinzel">
+            ÉDITION D'ART • TẬP SỬ THI GIÁM TUYỂN
+          </span>
+          <h1 class="text-3xl md:text-5xl font-black masthead-title tracking-[0.1em] uppercase font-cinzel leading-none">
+            THE CHRONICLER
+          </h1>
+          <p class="font-editorial text-sm md:text-base italic text-[#4a423b] mt-1.5">
+            Đại Việt Hư Cấu Toàn Thư — Biên niên sử cạnh tranh & trí tưởng tượng tập thể
+          </p>
+        </div>
+
+        <!-- Các Nút Thao Tác Chuẩn Gallery / Artbook -->
+        <div class="flex items-center gap-2.5">
+          <!-- Đóng Triện Son Demo -->
+          <button 
+            onclick="triggerInteractiveSealDemo()" 
+            class="editorial-btn-outline text-xs flex items-center gap-1.5 border-[#9b2226] text-[#9b2226] hover:bg-[#9b2226]"
+            title="Bấm để thử nghiệm con dấu triện son nảy mực"
+          >
+            <span class="w-2 h-2 rounded-full bg-[#9b2226]"></span>
+            <span>Triện Son</span>
+          </button>
+
+          <!-- In Ấn Bản Giấy A4 -->
+          <button 
+            onclick="printEditorialEdition()" 
+            class="editorial-btn-outline text-xs flex items-center gap-1.5"
+            title="In ấn bản giấy A4 gửi nhà in hoặc lưu file PDF"
+          >
+            <span>🖨️</span>
+            <span class="hidden sm:inline">Xuất Bản A4</span>
+          </button>
+
+          <!-- Khởi Thảo Năm Mới -->
+          <button 
+            onclick="openNewMonographModal()" 
+            class="editorial-btn-primary text-xs"
+          >
+            <span>+</span>
+            <span>Khởi Thảo Niên Biểu Mới</span>
+          </button>
+
+          <!-- Quỹ Sử Quán / Cài Đặt -->
+          <button 
+            onclick="openConfigModal()" 
+            class="p-2 border border-[#1a1816] rounded-sm hover:bg-[#1a1816] hover:text-white transition-colors"
+            title="Cài đặt tài khoản ngân hàng bảo trợ"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================
+       2. THANH NIÊN BIỂU GIÁM TUYỂN (CURATED TIMELINE STRIP)
+       ======================================================== -->
+  <nav class="timeline-curated-strip py-2 px-4 sticky top-0 z-30 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      
+      <button 
+        onclick="prevMonograph()" 
+        class="text-xs uppercase tracking-widest text-[#6b625b] hover:text-[#1a1816] font-cinzel font-bold shrink-0 flex items-center gap-1"
+      >
+        <span>←</span> <span class="hidden sm:inline">Niên Hiệu Trước</span>
+      </button>
+
+      <!-- Dãy hạt các mốc năm duyệt mượt mà -->
+      <div id="curated-timeline-strip" class="flex items-center gap-2 overflow-x-auto scrollbar-none py-1">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <button 
+        onclick="nextMonograph()" 
+        class="text-xs uppercase tracking-widest text-[#6b625b] hover:text-[#1a1816] font-cinzel font-bold shrink-0 flex items-center gap-1"
+      >
+        <span class="hidden sm:inline">Niên Hiệu Sau</span> <span>→</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       3. NỘI DUNG CHUYÊN KHẢO CHÍNH (FEATURED MONOGRAPH)
+       ======================================================== -->
+  <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+    
+    <article class="monograph-container p-6 md:p-12 mb-12">
+      
+      <!-- Đỉnh bài viết: Kỷ nguyên & Niên hiệu La Mã -->
+      <div class="text-center pb-6 border-b border-[#e6dcce] mb-8">
+        <div class="flex items-center justify-center gap-3 text-xs tracking-[0.25em] uppercase text-[#b08432] font-cinzel mb-2">
+          <span id="mono-era-roman">LIBER I</span>
+          <span>•</span>
+          <span id="mono-era-name">KỶ KHỞI NGUYÊN (2025 – 2035)</span>
+        </div>
+
+        <!-- Số năm in to sang trọng -->
+        <h2 id="mono-year-display" class="font-cinzel text-4xl md:text-6xl font-black tracking-[0.15em] text-[#1a1816] my-2">
+          NĂM TÂN HỢI 2031
+        </h2>
+
+        <!-- Tiêu đề chuyên khảo -->
+        <h3 id="mono-headline" class="font-serif-title text-2xl md:text-4xl font-bold text-[#1a1816] max-w-4xl mx-auto mt-3 leading-snug">
+          Đại Học Bách Khoa Chuyển Toàn Bộ Cơ Sở Lên Sao Hỏa
+        </h3>
+
+        <!-- Phụ đề học thuật -->
+        <p id="mono-subtitle" class="font-editorial text-base md:text-lg italic text-[#6b625b] max-w-2xl mx-auto mt-2.5">
+          Khảo luận văn hiến về bước đại nhảy vọt của nền học thuật kỹ thuật sang bình nguyên Utopia Planitia.
+        </p>
+
+        <!-- Lạc khoản & Tín chỉ văn tự -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-[#6b625b] pt-4 mt-4 border-t border-[#e6dcce]/60 font-cinzel">
+          <div>Khởi thảo: <strong id="mono-byline-author" class="text-[#1a1816]">Bút Giả K65 Vũ Trụ</strong></div>
+          <span>•</span>
+          <div>Bảo chứng: <strong id="mono-bounty-val" class="text-[#b08432]">350.000 VNĐ</strong></div>
+          <span>•</span>
+          <div>Bộ môn: <span id="mono-category" class="italic text-[#1a1816]">Khoa Học Không Gian</span></div>
+          <span>•</span>
+          <div>Thời khắc: <span id="mono-timestamp" class="text-[#6b625b]">2026</span></div>
+        </div>
+      </div>
+
+      <!-- Bố Cục 2 Cột: Tranh Khắc & Văn Tự (Trái: 7 cột) vs Chiến Địa Viết Đè (Phải: 5 cột) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+        
+        <!-- CỘT TRÁI: ÁNG VĂN CHÍNH BIÊN & BẢN KHẮC GỖ (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Bản Khắc Gỗ Nghệ Thuật (Woodcut Plate) -->
+          <div class="woodcut-plate">
+            <div class="woodcut-inner-frame text-center">
+              <div class="h-44 bg-[#f4ede2] border border-[#d8ccb8] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+                <span id="mono-woodcut-icon" class="text-6xl mb-2 drop-shadow-sm">🚀</span>
+                <div class="w-16 h-0.5 bg-[#1a1816]/30 my-1"></div>
+                <p class="font-editorial text-xs italic text-[#6b625b]">Minh họa ấn bản gỗ giám tuyển</p>
+              </div>
+              <p id="mono-woodcut-caption" class="font-editorial text-xs italic text-[#4a423b] mt-3">
+                Bản khắc số 31: Giảng đường C1 bay qua vành đai bụi đỏ sao Hỏa.
+              </p>
+            </div>
+          </div>
+
+          <!-- Nội Dung Áng Văn Với Drop Cap -->
+          <div class="font-editorial text-base md:text-lg leading-relaxed text-justify space-y-4 editorial-dropcap text-[#2d2926] whitespace-pre-line">
+            <p id="mono-content-body">
+              Nội dung chính sử đang tải...
+            </p>
+          </div>
+
+          <!-- Lời Ban Sử Quán & Triện Ấn Bảo Chứng -->
+          <div class="pt-6 border-t border-[#e6dcce] flex items-center justify-between">
+            <div class="font-editorial text-xs text-[#6b625b]">
+              <p>Trích từ <strong>Khâm Định Đại Sử Ký Hư Cấu Toàn Thư</strong>.</p>
+              <p class="italic">Văn bản này hiện được công nhận là Chính Sử Độc Bản duy nhất của năm này.</p>
+            </div>
+
+            <!-- Con Dấu Son Thật -->
+            <div id="mono-seal-target" class="editorial-seal text-xs cursor-pointer animate-seal-stamp" onclick="triggerInteractiveSealDemo()" title="Bấm để đóng triện son">
+              CHÍNH SỬ ĐÃ ĐỊNH
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CỘT PHẢI: CHIẾN ĐỊA LẬT ĐỔ BẢN THẢO (THE REWRITING SALON) (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="rewriting-salon">
+            
+            <div class="border-b border-[#e6dcce] pb-3 mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9b2226] block font-cinzel">
+                THE REWRITING SALON
+              </span>
+              <h4 class="font-serif-title text-xl font-bold text-[#1a1816]">
+                Chiến Địa Lật Đổ Bản Thảo
+              </h4>
+              <p class="font-editorial text-xs italic text-[#6b625b] mt-1 leading-relaxed">
+                Bạn không đồng thuận với chuyên luận của sử gia đương triều? Hãy đặt cọc kinh phí bảo chứng để công bố một chính biên mới cho năm <strong id="salon-target-year" class="text-[#1a1816]">2031</strong>:
+              </p>
+            </div>
+
+            <!-- Form Đề Xuất Luận Điểm Mới (Line Inputs) -->
+            <form id="salon-overwrite-form" onsubmit="handleSalonOverwrite(event)" class="space-y-4 text-xs font-editorial">
+              
+              <div>
+                <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Bút Danh Tác Giả:</label>
+                <input 
+                  type="text" 
+                  id="salon-input-author" 
+                  required 
+                  placeholder="Ví dụ: Sử Gia Vùng Cao, Khảo Cổ Học Giả..." 
+                  class="editorial-input"
+                />
+              </div>
+
+              <div>
+                <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">
+                  Kinh Phí Bảo Chứng (Tối thiểu <span id="salon-min-bid-hint" class="font-mono text-[#9b2226] font-bold">370.000 ₫</span>):
+                </label>
+                <input 
+                  type="number" 
+                  id="salon-bid-input" 
+                  required 
+                  step="10000" 
+                  class="editorial-input font-mono font-bold text-[#b08432]"
+                />
+              </div>
+
+              <div>
+                <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Tiêu Đề Luận Đề Mới:</label>
+                <input 
+                  type="text" 
+                  id="salon-input-title" 
+                  required 
+                  placeholder="Biến cố chấn động gì bạn muốn thay thế?" 
+                  class="editorial-input font-bold text-[#1a1816]"
+                />
+              </div>
+
+              <div>
+                <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Phụ Đề Chuyên Khảo:</label>
+                <input 
+                  type="text" 
+                  id="salon-input-subtitle" 
+                  placeholder="Một câu luận giải ngắn gọn..." 
+                  class="editorial-input italic"
+                />
+              </div>
+
+              <div>
+                <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Nội Dung Luận Án Khắc Vào Sách:</label>
+                <textarea 
+                  id="salon-input-content" 
+                  rows="3" 
+                  required 
+                  placeholder="Trình bày góc nhìn lịch sử mới của bạn với sự bay bổng và thuyết phục..." 
+                  class="editorial-textarea"
+                ></textarea>
+              </div>
+
+              <!-- Thẻ Thanh Toán VietQR Chuẩn Tạp Chí Nghệ Thuật -->
+              <div class="p-3 bg-[#f3ecdf] border border-[#ded3c1] rounded-sm flex items-center gap-3">
+                <div class="w-16 h-16 bg-white p-1 rounded shadow-sm shrink-0 border border-[#d8ccb8]">
+                  <img id="salon-vietqr-img" src="" alt="Mã VietQR" class="w-full h-full object-contain" />
+                </div>
+                <div class="flex-1 text-xs leading-snug">
+                  <span class="font-cinzel text-[10px] text-[#6b625b] uppercase block">Bảo Trợ Văn Tự Chuẩn VietQR</span>
+                  <span>Mức phí: <strong id="salon-qr-amount" class="text-[#b08432] font-mono">0 ₫</strong></span><br>
+                  <span>Mã lưu trữ: <strong id="salon-qr-memo" class="text-[#1a1816] font-mono">SU CHIEN</strong></span>
+                </div>
+              </div>
+
+              <!-- Nút Thẩm Định & Viết Đè -->
+              <button 
+                type="submit" 
+                class="w-full editorial-btn-primary text-xs py-3 mt-2"
+              >
+                <span>🔴</span>
+                <span>Đóng Dấu Son & Thay Thế Chính Biên</span>
+              </button>
+
+            </form>
+
+            <!-- Tập Lưu Trữ Dã Sử Bị Bác Bỏ (Retracted Theses) -->
+            <div class="mt-8 pt-5 border-t border-[#e6dcce]">
+              <span class="font-cinzel text-[10px] uppercase tracking-[0.15em] text-[#6b625b] block mb-2 font-bold">
+                📜 TẬP DÃ SỬ BỊ BÁC BỎ TRƯỚC ĐÂY (RETRACTED THESES):
+              </span>
+              <div id="retracted-theses-list" class="space-y-2 max-h-48 overflow-y-auto pr-1">
+                <!-- Rendered by app.js -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- HƯỚNG DẪN BẢO TỒN VĂN HIẾN CHÂN TRANG -->
+    <footer class="pt-8 pb-16 border-t-2 border-[#1a1816] text-center text-xs text-[#6b625b] font-editorial space-y-2">
+      <div class="flex justify-center items-center gap-4 text-sm mb-3">
+        <button onclick="exportEditorialMarkdown()" class="hover:text-[#1a1816] underline font-cinzel">Tải Bản Thảo Markdown</button>
+        <span>•</span>
+        <button onclick="printEditorialEdition()" class="hover:text-[#1a1816] underline font-cinzel">In Ấn Bản Xuất Bản A4</button>
+        <span>•</span>
+        <button onclick="resetDefaultEvents()" class="hover:text-[#9b2226] underline font-cinzel">Khôi Phục Sử Liệu Gốc</button>
+      </div>
+      <p>© 2026 The Chronicler. Ấn bản giám tuyển nghệ thuật bảo trợ bởi Viện Sử Học Hư Cấu Quốc Tế.</p>
+      <p class="italic text-[11px] text-[#8c827a]">"Lịch sử không thuộc về quá khứ, nó thuộc về những tâm hồn đủ dũng khí sáng tạo nên tương lai."</p>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================
+       MODAL 1: KHỞI THẢO MỐC NĂM MỚI (NEW MONOGRAPH MODAL)
+       ======================================================== -->
+  <div id="new-monograph-modal" class="fixed inset-0 z-50 editorial-modal-overlay flex items-center justify-center p-4 hidden overflow-y-auto">
+    <div class="bg-[#fbf8f2] border-2 border-[#1a1816] rounded-none max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-8 font-editorial">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-[#e6dcce] mb-5">
+        <div>
+          <span class="font-cinzel text-[10px] uppercase tracking-widest text-[#b08432]">HỘI ĐỒNG SỬ HỌC</span>
+          <h3 class="font-serif-title text-xl font-bold text-[#1a1816]">Khởi Thảo Niên Biểu Mới</h3>
+        </div>
+        <button onclick="closeNewMonographModal()" class="text-xl text-[#6b625b] hover:text-[#1a1816]">✕</button>
+      </div>
+
+      <form id="create-monograph-form" onsubmit="handleCreateMonograph(event)" class="space-y-4 text-xs">
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Niên Hiệu Năm:</label>
+            <input type="number" id="create-mono-year" required min="1900" max="9999" placeholder="2035" class="editorial-input font-bold text-[#1a1816]" />
+          </div>
+          <div>
+            <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Kinh Phí Khởi Thảo (VNĐ):</label>
+            <input type="number" id="create-mono-price" required step="10000" value="50000" class="editorial-input font-mono font-bold text-[#b08432]" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Bút Danh Học Giả:</label>
+          <input type="text" id="create-mono-author" required placeholder="Bút danh của bạn..." class="editorial-input" />
+        </div>
+
+        <div>
+          <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Tiêu Đề Đại Sự Năm Đó:</label>
+          <input type="text" id="create-mono-title" required placeholder="Biến cố lịch sử chấn động gì?" class="editorial-input font-bold" />
+        </div>
+
+        <div>
+          <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Phụ Đề Chuyên Luận:</label>
+          <input type="text" id="create-mono-subtitle" placeholder="Một câu giới thiệu khái quát..." class="editorial-input italic" />
+        </div>
+
+        <div>
+          <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Phân Ban Sử Học:</label>
+          <select id="create-mono-category" class="w-full p-2 bg-transparent border-b border-[#c9beae] text-sm font-editorial focus:outline-none">
+            <option value="Khoa Học & Viễn Kiến">Khoa Học & Viễn Kiến</option>
+            <option value="Văn Hóa & Phong Tục">Văn Hóa & Phong Tục</option>
+            <option value="Hải Hành Không Gian">Hải Hành Không Gian</option>
+            <option value="Kinh Tế & Tiền Tệ Thiên Hà">Kinh Tế & Tiền Tệ Thiên Hà</option>
+            <option value="Huyền Sử Huyền Vi">Huyền Sử Huyền Vi</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-cinzel uppercase tracking-wider text-[#6b625b] mb-1">Toàn Văn Áng Văn Chính Sử:</label>
+          <textarea id="create-mono-content" rows="3" required placeholder="Kể lại chi tiết với bút pháp sử thi..." class="editorial-textarea"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-[#e6dcce]">
+          <button type="button" onclick="closeNewMonographModal()" class="editorial-btn-outline text-xs">Đóng</button>
+          <button type="submit" class="editorial-btn-primary text-xs">Công Bố Chuyên Khảo</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL 2: CÀI ĐẶT TÀI KHOẢN NGÂN HÀNG BẢO TRỢ
+       ======================================================== -->
+  <div id="config-modal" class="fixed inset-0 z-50 editorial-modal-overlay flex items-center justify-center p-4 hidden">
+    <div class="bg-[#fbf8f2] border-2 border-[#1a1816] rounded-none max-w-md w-full p-6 shadow-2xl font-editorial">
+      <div class="flex items-center justify-between pb-3 border-b border-[#e6dcce] mb-4">
+        <h3 class="font-serif-title text-lg font-bold text-[#1a1816]">⚙️ Tài Khoản Bảo Trợ Sử Quán</h3>
+        <button onclick="closeConfigModal()" class="text-[#6b625b] hover:text-[#1a1816]">✕</button>
+      </div>
+
+      <p class="text-xs text-[#6b625b] mb-4 italic leading-relaxed">
+        Các khoản bảo chứng khi học giả mua năm hoặc viết đè sẽ được hệ thống tạo mã VietQR tự động chuyển vào tài khoản này.
+      </p>
+
+      <form onsubmit="saveConfigForm(event)" class="space-y-3.5 text-xs font-editorial">
+        <div>
+          <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Ngân Hàng Thụ Hưởng:</label>
+          <select id="cfg-bank-select" class="w-full p-2 bg-transparent border-b border-[#c9beae] text-sm focus:outline-none"></select>
+        </div>
+
+        <div>
+          <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Số Tài Khoản:</label>
+          <input type="text" id="cfg-bank-acc" required class="editorial-input font-mono font-bold" />
+        </div>
+
+        <div>
+          <label class="block font-cinzel text-[11px] uppercase tracking-wider text-[#6b625b] mb-1">Tên Chủ Tài Khoản (In hoa không dấu):</label>
+          <input type="text" id="cfg-holder" required class="editorial-input uppercase font-mono" />
+        </div>
+
+        <div class="flex justify-end gap-2 pt-4 border-t border-[#e6dcce]">
+          <button type="button" onclick="closeConfigModal()" class="editorial-btn-outline text-xs">Đóng</button>
+          <button type="submit" class="editorial-btn-primary text-xs">Lưu Thay Đổi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
