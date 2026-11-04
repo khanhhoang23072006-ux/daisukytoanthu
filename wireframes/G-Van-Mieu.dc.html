@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>G · Sân bia Văn Miếu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.st{display:flex;flex-direction:column;align-items:center;gap:0}
+.slab{width:76px;background:#e2e2e2;border:1.5px solid #222;border-radius:38px 38px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:14px;gap:6px;box-sizing:border-box;font-size:13px;font-weight:800}
+.turtle{width:104px;height:30px;border-radius:50%;background:#bdbdbd;border:1.5px solid #222;box-sizing:border-box;margin-top:-4px}
+.cut{width:44px;height:2px;background:#888}
+.field{border:none;border-bottom:1.5px dotted #777;padding:10px 0;font-size:14px;background:transparent;width:100%;font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1100px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc">
+    <div style="font-size: 22px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <div class="lbl">Mỗi năm một tấm bia · bia càng cao, trang sử càng đắt</div>
+    <button class="btn btn-p">+ Dựng bia mới</button>
+  </header>
+  <div style="flex: 1; display: grid; grid-template-columns: 1fr 380px">
+    <div style="padding: 32px 48px; display: flex; flex-direction: column; gap: 28px; background: #f6f6f6">
+      <div style="display: flex; justify-content: center"><div class="ph" style="width: 420px; height: 70px; border-style: solid">Khuê Văn Các — thống kê: [quỹ] · [lật đổ]</div></div>
+      <div class="lbl">Dãy bia Liber I</div>
+      <div style="display: flex; gap: 36px; align-items: flex-end">
+        <div class="st"><div class="slab" style="height: 150px">2026<div class="cut"></div><div class="cut"></div></div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 200px; background: #222; color: #fff">2028<div class="cut" style="background: #bbb"></div><div class="cut" style="background: #bbb"></div><div class="cut" style="background: #bbb"></div></div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 110px">2031</div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 120px; border-style: dashed; background: #fff">+</div><div class="turtle" style="border-style: dashed; background: #fff"></div></div>
+      </div>
+      <div class="lbl">Dãy bia Liber II–III</div>
+      <div style="display: flex; gap: 36px; align-items: flex-end">
+        <div class="st"><div class="slab" style="height: 240px">2042<div class="cut"></div><div class="cut"></div><div class="cut"></div><div class="cut"></div></div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 140px">2055<div class="cut"></div></div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 260px">2077<div class="cut"></div><div class="cut"></div><div class="cut"></div></div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 130px">2112</div><div class="turtle"></div></div>
+        <div class="st"><div class="slab" style="height: 170px">2250<div class="cut"></div></div><div class="turtle"></div></div>
+      </div>
+      <div class="lbl">Vạch ngang trên bia = số lần bị đục khắc lại</div>
+    </div>
+    <aside style="border-left: 1.5px solid #222; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+      <div class="lbl">Bản rập bia năm 2028</div>
+      <div class="ph" style="height: 260px; border-style: solid; flex-direction: column; gap: 8px">Văn bia khắc tiêu đề + tóm tắt<div class="lbl">(bản rập mực đen chữ trắng)</div></div>
+      <div class="lbl">Lớp khắc cũ bên dưới (2)</div>
+      <div class="ph" style="height: 40px">[giá] · bản cũ</div><div class="ph" style="height: 40px">[giá] · bản cũ</div>
+      <div style="border-top: 1px solid #ccc; margin: 6px 0"></div>
+      <div style="font-size: 18px; font-weight: 700">Đục bia, khắc lại</div>
+      <label class="lbl" for="g1">Bút danh</label><input id="g1" class="field">
+      <label class="lbl" for="g2">Mức bảo chứng</label><input id="g2" class="field">
+      <div class="ph" style="height: 120px">VietQR</div>
+      <button class="btn btn-p">Khắc lên bia</button>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

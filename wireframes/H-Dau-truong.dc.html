@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>H · Đấu trường luận đề</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.side{border:2px solid #222;padding:24px;display:flex;flex-direction:column;gap:12px;box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1100px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc">
+    <div style="font-size: 22px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <nav aria-label="Các trận" style="display: flex; gap: 8px"><button class="btn">2026</button><button class="btn btn-p">2028 · ĐANG ĐẤU</button><button class="btn">2042</button><button class="btn">2077</button></nav>
+    <div class="lbl">[n] người đang xem</div>
+  </header>
+  <section style="padding: 28px 48px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px">
+    <div class="lbl">Trận tranh đoạt chính biên năm</div>
+    <div style="font-size: 64px; font-weight: 800; line-height: 1">2028</div>
+    <div class="lbl">Còn [hh:mm:ss] trước khi niêm phong</div>
+  </section>
+  <div style="padding: 20px 48px; display: grid; grid-template-columns: 1fr 120px 1fr; gap: 24px; align-items: stretch">
+    <div class="side">
+      <div class="lbl">Chính biên đương nhiệm</div>
+      <div style="font-size: 24px; font-weight: 700">Tiêu đề hiện tại</div>
+      <div class="ph" style="height: 180px">Tranh</div>
+      <div class="bar"></div><div class="bar" style="width: 70%"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center"><span class="lbl">[sử quan] · [giá]</span><button class="btn">Ủng hộ +[bước]</button></div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px">
+      <div style="width: 96px; height: 96px; border-radius: 50%; border: 3px solid #222; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800">VS</div>
+    </div>
+    <div class="side" style="border-style: dashed">
+      <div class="lbl">Kẻ thách đấu · bạn</div>
+      <label class="lbl" for="h1">Tiêu đề mới</label><input id="h1" class="btn" style="text-align: left" placeholder="Luận đề của bạn">
+      <label class="lbl" for="h2">Nội dung</label><textarea id="h2" class="btn" style="height: 110px; text-align: left"></textarea>
+      <div style="display: flex; gap: 12px; align-items: center"><div class="ph" style="width: 110px; height: 110px">VietQR</div><div style="flex: 1; display: flex; flex-direction: column; gap: 8px"><label class="lbl" for="h3">Đặt cược (≥ [giá])</label><input id="h3" class="btn" style="text-align: left"><button class="btn btn-p">Tung đòn · lật đổ</button></div></div>
+    </div>
+  </div>
+  <div style="padding: 8px 48px; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; justify-content: space-between" class="lbl"><span>Phe chính biên [tổng]</span><span>Cán cân quỹ</span><span>Phe thách đấu [tổng]</span></div>
+    <div style="height: 28px; border: 2px solid #222; display: flex"><div style="width: 58%; background: #222"></div><div style="flex: 1; background: #ddd"></div></div>
+  </div>
+  <div style="flex: 1; padding: 20px 48px 28px; display: grid; grid-template-columns: 2fr 1fr; gap: 28px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div class="lbl">Diễn biến trực tiếp</div>
+      <div class="ph" style="height: 40px; justify-content: flex-start; padding: 0 12px">[giờ] · [tên] ủng hộ chính biên +[tiền]</div>
+      <div class="ph" style="height: 40px; justify-content: flex-start; padding: 0 12px">[giờ] · [tên] thách đấu với [tiền]</div>
+      <div class="ph" style="height: 40px; justify-content: flex-start; padding: 0 12px">[giờ] · [tên] ủng hộ chính biên +[tiền]</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div class="lbl">Hàng chờ thách đấu</div>
+      <div class="ph" style="height: 40px">1 · [tên] · [luận đề]</div>
+      <div class="ph" style="height: 40px">2 · [tên] · [luận đề]</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>E · Cuộn tranh ngang vô tận</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.pin{display:flex;flex-direction:column;align-items:center;gap:6px;position:absolute}
+.pin-dot{width:16px;height:16px;border-radius:50%;background:#222}
+.pin-stem{width:2px;background:#222}
+.field{border:none;border-bottom:1.5px dotted #777;padding:10px 0;font-size:14px;background:transparent;width:100%;font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1100px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 48px; display: flex; justify-content: space-between; align-items: center">
+    <div style="font-size: 22px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <div class="lbl">Kéo ngang · cuộn chuột · phím ← →</div>
+    <button class="btn btn-p">+ Vẽ thêm năm</button>
+  </header>
+  <div style="flex: 1; position: relative; border-top: 6px solid #222; border-bottom: 6px solid #222; background: #f3f3f3; overflow: hidden">
+    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 28px; background: #555"></div>
+    <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 28px; background: #555"></div>
+    <svg aria-hidden="true" width="1280" height="560" viewBox="0 0 1280 560" style="position: absolute; left: 0; top: 60px">
+      <path d="M0 420 L120 300 L210 360 L330 200 L460 340 L560 260 L700 380 L820 220 L960 330 L1060 250 L1180 360 L1280 300 L1280 560 L0 560 Z" fill="#dcdcdc" stroke="#999" stroke-dasharray="6 4"></path>
+      <path d="M0 470 Q320 400 640 460 T1280 450 L1280 560 L0 560 Z" fill="#cfcfcf"></path>
+    </svg>
+    <div class="pin" style="left: 150px; top: 120px"><div class="lbl">2026</div><div class="pin-dot"></div><div class="pin-stem" style="height: 150px"></div></div>
+    <div class="pin" style="left: 360px; top: 70px"><div class="lbl">2028</div><div class="pin-dot"></div><div class="pin-stem" style="height: 120px"></div></div>
+    <div class="pin" style="left: 820px; top: 60px"><div class="lbl">2042</div><div class="pin-dot"></div><div class="pin-stem" style="height: 140px"></div></div>
+    <div class="pin" style="left: 1080px; top: 110px"><div class="lbl">2055</div><div class="pin-dot"></div><div class="pin-stem" style="height: 130px"></div></div>
+    <div style="position: absolute; left: 520px; top: 40px; width: 300px; background: #fff; border: 2px solid #222; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+      <div class="lbl">Đang dừng · Liber I</div>
+      <div style="font-size: 40px; font-weight: 800; line-height: 1">2031</div>
+      <div style="font-weight: 700">Tiêu đề sự kiện</div>
+      <div class="bar"></div><div class="bar" style="width: 70%"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center"><span class="lbl">[giá] · lật [n]×</span><div class="ph" style="width: 44px; height: 44px; border-radius: 50%">Triện</div></div>
+      <button class="btn btn-p">Vẽ lại cảnh này</button>
+    </div>
+    <div style="position: absolute; left: 670px; top: 330px; width: 2px; height: 200px; background: #222"></div>
+    <div class="lbl" style="position: absolute; left: 60px; bottom: 24px; background: #fff; padding: 6px 10px; border: 1px solid #222">Cảnh vật thay đổi theo thời đại: làng → đô thị → trạm vũ trụ</div>
+  </div>
+  <div style="padding: 20px 48px; display: flex; flex-direction: column; gap: 10px">
+    <div class="lbl">Bản đồ thu nhỏ của cả cuộn</div>
+    <div style="position: relative; height: 44px; border: 1.5px solid #222; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+      <div style="border-right: 1px solid #999; display: flex; align-items: center; padding-left: 8px" class="lbl">Liber I</div>
+      <div style="border-right: 1px solid #999; display: flex; align-items: center; padding-left: 8px" class="lbl">Liber II</div>
+      <div style="border-right: 1px solid #999; display: flex; align-items: center; padding-left: 8px" class="lbl">Liber III</div>
+      <div style="display: flex; align-items: center; padding-left: 8px" class="lbl">Liber IV</div>
+      <div style="position: absolute; left: 6%; top: -4px; bottom: -4px; width: 18%; border: 3px solid #222; background: rgba(0,0,0,.08)"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>F · La bàn niên đại</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#333}a:hover{color:#000}
+.ph{background:#e6e6e6;border:1px dashed #9a9a9a;display:flex;align-items:center;justify-content:center;color:#555;font-size:13px}
+.bar{height:10px;background:#d4d4d4;border-radius:2px}
+.lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#555}
+.btn{border:1.5px solid #222;background:#fff;color:#222;padding:12px 18px;font-size:14px;min-height:44px;box-sizing:border-box;font-family:inherit}
+.btn-p{background:#222;color:#fff}
+.field{border:none;border-bottom:1.5px dotted #777;padding:10px 0;font-size:14px;background:transparent;width:100%;font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1280px; height: 1100px; box-sizing: border-box; background: #ffffff; color: #222; font-family: system-ui, -apple-system, Segoe UI, sans-serif; display: flex; flex-direction: column">
+  <header style="padding: 18px 48px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ccc">
+    <div style="font-size: 22px; font-weight: 800; letter-spacing: .08em">THE CHRONICLER</div>
+    <div class="lbl">Xoay vòng để chọn năm · vòng trong = gần, vòng ngoài = xa</div>
+    <button class="btn btn-p">+ Khắc năm mới</button>
+  </header>
+  <div style="flex: 1; display: grid; grid-template-columns: 760px 1fr; gap: 0">
+    <div style="position: relative; display: flex; align-items: center; justify-content: center">
+      <svg role="img" aria-label="La bàn niên đại: 4 vòng kỷ nguyên, chấm là các năm, chấm càng to giá càng cao" width="700" height="700" viewBox="0 0 700 700">
+        <circle cx="350" cy="350" r="330" fill="none" stroke="#222" stroke-width="2"></circle>
+        <circle cx="350" cy="350" r="260" fill="none" stroke="#999" stroke-dasharray="5 5"></circle>
+        <circle cx="350" cy="350" r="190" fill="none" stroke="#999" stroke-dasharray="5 5"></circle>
+        <circle cx="350" cy="350" r="120" fill="#f0f0f0" stroke="#222" stroke-width="2"></circle>
+        <g stroke="#bbb"><line x1="350" y1="20" x2="350" y2="60"></line><line x1="680" y1="350" x2="640" y2="350"></line><line x1="350" y1="680" x2="350" y2="640"></line><line x1="20" y1="350" x2="60" y2="350"></line></g>
+        <circle cx="350" cy="160" r="14" fill="#222"></circle>
+        <circle cx="500" cy="230" r="9" fill="#666"></circle>
+        <circle cx="200" cy="260" r="7" fill="#666"></circle>
+        <circle cx="560" cy="420" r="11" fill="#666"></circle>
+        <circle cx="180" cy="520" r="16" fill="#666"></circle>
+        <circle cx="610" cy="190" r="6" fill="#666"></circle>
+        <circle cx="90" cy="380" r="12" fill="#666"></circle>
+        <circle cx="420" cy="660" r="8" fill="#666"></circle>
+        <polygon points="350,30 340,70 360,70" fill="#222"></polygon>
+        <line x1="350" y1="70" x2="350" y2="230" stroke="#222" stroke-width="2"></line>
+      </svg>
+      <div style="position: absolute; width: 220px; text-align: center; display: flex; flex-direction: column; gap: 4px">
+        <div class="lbl">Kim chỉ</div>
+        <div style="font-size: 52px; font-weight: 800; line-height: 1">2026</div>
+        <div class="lbl">[giá] · lật [n]×</div>
+      </div>
+      <div class="lbl" style="position: absolute; left: 40px; bottom: 32px">Vòng 1 Liber I · Vòng 2 Liber II · Vòng 3 Liber III · Viền Liber IV</div>
+      <div class="lbl" style="position: absolute; right: 40px; bottom: 32px">Chấm to = trang sử đắt</div>
+    </div>
+    <aside style="border-left: 1.5px solid #222; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+      <div class="lbl">Năm kim đang chỉ</div>
+      <div style="font-size: 28px; font-weight: 700; line-height: 1.2">Tiêu đề chuyên luận</div>
+      <div class="ph" style="height: 200px">Tranh minh họa</div>
+      <div class="bar"></div><div class="bar"></div><div class="bar" style="width: 65%"></div>
+      <div style="border-top: 1px solid #ccc; margin: 6px 0"></div>
+      <div style="font-size: 18px; font-weight: 700">Xoay lại vận mệnh năm này</div>
+      <label class="lbl" for="f1">Bút danh</label><input id="f1" class="field">
+      <label class="lbl" for="f2">Mức bảo chứng</label><input id="f2" class="field">
+      <div style="display: flex; gap: 12px; align-items: center"><div class="ph" style="width: 120px; height: 120px">VietQR</div><button class="btn btn-p" style="flex: 1">Đóng dấu</button></div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
