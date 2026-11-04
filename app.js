@@ -283,15 +283,17 @@ function renderCuratedTimelineStrip(sorted) {
     const isHot = (evt.overwritesCount || 0) >= 3;
 
     return `
-      <div 
-        onclick="selectMonographByIndex(${idx})" 
+      <button
+        type="button"
+        onclick="selectMonographByIndex(${idx})"
+        aria-pressed="${isActive}"
         class="curated-year-tab ${isActive ? 'active' : ''}"
         title="${evt.title}"
       >
         <span>${isHot ? '🔥' : '❖'}</span>
         <span>${evt.year}</span>
         ${isHot ? `<span class="text-[10px] ml-1 text-red-400 font-bold">(${evt.overwritesCount})</span>` : ''}
-      </div>
+      </button>
     `;
   }).join("");
 

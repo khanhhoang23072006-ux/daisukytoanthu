@@ -337,3 +337,193 @@ body {
     margin: 22mm 18mm;
   }
 }
+
+/* ========================================================
+   ÉDITION 2026 — INTERFACE ÉDITORIALE & WIREFRAME RESPONSIVE
+   ======================================================== */
+:root {
+  --art-bg: #f5f0e7;
+  --art-surface: #fffdf8;
+  --art-cream: #eee6d8;
+  --art-ink: #201b17;
+  --art-muted: #74695d;
+  --art-border: #ddd1bd;
+  --gold-leaf: #a87927;
+  --vermilion: #a42b27;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 88% 10%, rgba(168, 121, 39, .09), transparent 33rem),
+    radial-gradient(ellipse at 5% 55%, rgba(164, 43, 39, .045), transparent 30rem),
+    repeating-linear-gradient(0deg, rgba(89, 69, 41, .012) 0, rgba(89, 69, 41, .012) 1px, transparent 1px, transparent 4px);
+}
+
+.editorial-masthead {
+  border-bottom: 1px solid var(--art-ink);
+  box-shadow: 0 8px 28px rgba(49, 39, 25, .045);
+}
+
+.editorial-masthead > div,
+.timeline-curated-strip > div,
+main.max-w-6xl {
+  max-width: 1280px;
+}
+
+.masthead-title {
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  letter-spacing: .16em;
+}
+
+.timeline-curated-strip {
+  background: rgba(238, 230, 216, .94);
+  border-color: #d8cbb6;
+  box-shadow: 0 8px 18px rgba(49, 39, 25, .06);
+}
+
+.curated-year-tab {
+  appearance: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: .75rem;
+}
+
+.curated-year-tab.active {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  box-shadow: 0 5px 14px rgba(164, 43, 39, .2);
+}
+
+.monograph-container {
+  overflow: hidden;
+  border: 1px solid #d6c8b3;
+  border-radius: 3px;
+  box-shadow: 0 26px 70px -35px rgba(44, 34, 23, .32), 0 3px 10px rgba(44, 34, 23, .045);
+  position: relative;
+}
+
+.monograph-container > .text-center {
+  position: relative;
+  padding: 1.25rem 1rem 2rem;
+}
+
+#mono-year-display {
+  color: #9d762f;
+  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  letter-spacing: .13em;
+}
+
+#mono-headline {
+  max-width: 58rem;
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
+.woodcut-plate {
+  background: #ede4d5;
+  padding: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.65), 0 10px 26px rgba(51, 40, 26, .09);
+}
+
+.woodcut-inner-frame {
+  border: 1px solid #6c5a41;
+  padding: 9px;
+  background: #f9f5ed;
+}
+
+.woodcut-inner-frame > div {
+  min-height: 250px;
+  border-color: #d2c2a8;
+  background:
+    radial-gradient(ellipse at 50% 43%, rgba(177, 138, 73, .18), transparent 48%),
+    repeating-linear-gradient(135deg, rgba(83, 63, 39, .045) 0 1px, transparent 1px 7px),
+    #eee5d6;
+}
+
+#mono-woodcut-icon {
+  filter: grayscale(1) sepia(.45) drop-shadow(0 8px 5px rgba(43, 31, 18, .2));
+  font-size: clamp(4.5rem, 9vw, 7rem);
+}
+
+.rewriting-salon {
+  position: sticky;
+  top: 90px;
+  background: #f8f3e9;
+  border: 1px solid #d9c9ae;
+  border-top: 3px solid var(--gold-leaf);
+  border-left: 1px solid #d9c9ae;
+  border-radius: 3px;
+  padding: clamp(18px, 2.5vw, 30px);
+  box-shadow: 0 12px 32px rgba(45, 35, 23, .07);
+}
+
+.editorial-input,
+.editorial-textarea {
+  font-size: 1.08rem;
+}
+
+.editorial-input:focus,
+.editorial-textarea:focus {
+  outline: 3px solid rgba(164, 43, 39, .14);
+  outline-offset: 2px;
+}
+
+.editorial-btn-primary {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  border-radius: 2px;
+  box-shadow: 0 6px 16px rgba(164, 43, 39, .18);
+  min-height: 48px;
+}
+
+.editorial-btn-primary:hover {
+  background: #81201e;
+  border-color: #81201e;
+  box-shadow: 0 9px 22px rgba(129, 32, 30, .24);
+}
+
+.editorial-btn-outline {
+  min-height: 40px;
+  border-radius: 2px;
+}
+
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, .curated-year-tab:focus-visible {
+  outline: 3px solid rgba(164, 43, 39, .45);
+  outline-offset: 3px;
+}
+
+.retracted-thesis-card {
+  border-left-color: #ad956e;
+  border-radius: 0 2px 2px 0;
+}
+
+@media (max-width: 1023px) {
+  .rewriting-salon { position: static; }
+}
+
+@media (max-width: 640px) {
+  .editorial-masthead { padding-bottom: 1rem; }
+  .masthead-title { letter-spacing: .1em; }
+  .timeline-curated-strip { top: 0; }
+  .curated-year-tab { padding: 7px 12px; }
+  .monograph-container { margin-bottom: 2rem; }
+  .monograph-container > .text-center { padding: .5rem 0 1.25rem; }
+  .woodcut-inner-frame > div { min-height: 190px; }
+  .editorial-seal { font-size: 9px; padding: 4px 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
