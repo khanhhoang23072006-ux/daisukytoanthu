@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --art-bg: #fbf8f2;
+  --art-surface: #ffffff;
+  --art-cream: #f4ede2;
+  --art-ink: #1a1816;
+  --art-charcoal: #2d2926;
+  --art-muted: #6b625b;
+  --art-border: #e6dcce;
+  --art-border-dark: #3a322b;
+  --gold-leaf: #b08432;
+  --gold-foil: #c49a45;
+  --vermilion: #9b2226;
+  --vermilion-light: #b91c1c;
+}
+
+* {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--art-bg);
+  color: var(--art-ink);
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(196, 154, 69, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(155, 34, 38, 0.03) 0%, transparent 40%);
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Garamond, 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono-clean {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom Scrollbar Nhẹ Nhàng Chuẩn Xuất Bản */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--art-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #c8bcab;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-leaf);
+}
+
+/* ========================================================
+   MASTHEAD & BÌA TẠP CHÍ SỬ HỌC CAO CẤP
+   ======================================================== */
+
+.editorial-masthead {
+  border-bottom: 3px double var(--art-ink);
+  background: var(--art-bg);
+}
+
+.masthead-title {
+  letter-spacing: 0.15em;
+  color: var(--art-ink);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+/* Bảng Triển Lãm Niên Biểu (Curated Timeline Strip) */
+.timeline-curated-strip {
+  background: var(--art-cream);
+  border-top: 1px solid var(--art-border);
+  border-bottom: 1px solid var(--art-border);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.curated-year-tab {
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--art-muted);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.curated-year-tab:hover {
+  color: var(--art-ink);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--art-border);
+}
+
+.curated-year-tab.active {
+  background: var(--art-ink);
+  color: #fbf8f2;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+
+/* ========================================================
+   CHUYÊN LUẬN CHÍNH (FEATURE ARTICLE ARCHIVE PLATE)
+   ======================================================== */
+
+.monograph-container {
+  background: var(--art-surface);
+  border: 1px solid var(--art-border);
+  box-shadow: 0 20px 45px -15px rgba(45, 41, 38, 0.08);
+  border-radius: 4px;
+}
+
+/* Tranh Khắc Bản Gỗ (Woodcut Engraving Plate) */
+.woodcut-plate {
+  background: #f7f3ec;
+  border: 1px solid #dfd4c4;
+  padding: 16px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.woodcut-inner-frame {
+  border: 2px solid var(--art-ink);
+  padding: 12px;
+  background: #fff;
+}
+
+.woodcut-illustration {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(120%) sepia(20%);
+}
+
+/* Drop Cap Chữ Hoa Đầu Dòng Tạp Chí Cổ Điển */
+.editorial-dropcap::first-letter {
+  font-family: 'Playfair Display', Georgia, serif;
+  float: left;
+  font-size: 4.2rem;
+  line-height: 0.8;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  color: var(--vermilion);
+  font-weight: 900;
+}
+
+/* Con Dấu Triện Son Khâm Định */
+.editorial-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--vermilion);
+  color: var(--vermilion);
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  background: rgba(155, 34, 38, 0.04);
+  box-shadow: 0 0 12px rgba(155, 34, 38, 0.15);
+  user-select: none;
+}
+
+@keyframes sealStampSplat {
+  0% {
+    transform: scale(3.2) rotate(-20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(0.92) rotate(-1deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.05) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+.animate-seal-stamp {
+  animation: sealStampSplat 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* ========================================================
+   CHIẾN ĐỊA LẬT ĐỔ BẢN THẢO (THE REWRITING SALON)
+   ======================================================== */
+
+.rewriting-salon {
+  background: #faf6ef;
+  border: 1px solid var(--art-border);
+  border-left: 3px solid var(--gold-leaf);
+  padding: 28px;
+  border-radius: 2px;
+}
+
+/* Ô Nhập Dòng Kẻ Chấm Phong Cách Sách In (Dotted Line Input) */
+.editorial-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #c9beae;
+  border-radius: 0;
+  padding: 8px 2px;
+  color: var(--art-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.editorial-input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--vermilion);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.editorial-textarea {
+  background: transparent;
+  border: 1px solid #dcd1c2;
+  border-radius: 2px;
+  padding: 10px;
+  color: var(--art-ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+  width: 100%;
+  resize: vertical;
+}
+
+.editorial-textarea:focus {
+  outline: none;
+  border-color: var(--vermilion);
+  background: #ffffff;
+}
+
+/* Nút Bấm Khắc Chữ Sang Trọng */
+.editorial-btn-primary {
+  background: var(--art-ink);
+  color: #fbf8f2;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 12px 24px;
+  border: 1px solid var(--art-ink);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.editorial-btn-primary:hover {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+  box-shadow: 0 6px 20px rgba(155, 34, 38, 0.25);
+  transform: translateY(-1px);
+}
+
+.editorial-btn-outline {
+  background: transparent;
+  color: var(--art-ink);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 8px 16px;
+  border: 1px solid var(--art-ink);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.editorial-btn-outline:hover {
+  background: var(--art-ink);
+  color: #fff;
+}
+
+/* ========================================================
+   DÃ SỬ BỊ BÁC BỎ (RETRACTED MONOGRAPHS / MARGINALIA)
+   ======================================================== */
+
+.retracted-thesis-card {
+  border-left: 2px solid #b5a999;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Modal Overlay */
+.editorial-modal-overlay {
+  background: rgba(26, 24, 22, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* ========================================================
+   CHẾ BẢN IN ẤN VẬT LÝ A4 (PRINT SPECIFICATIONS)
+   ======================================================== */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+  }
+  header, footer, .no-print, #toast-container, .timeline-curated-strip, .rewriting-salon {
+    display: none !important;
+  }
+  #book-mode-container {
+    display: block !important;
+  }
+  .monograph-container {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  @page {
+    size: A4;
+    margin: 22mm 18mm;
+  }
+}
